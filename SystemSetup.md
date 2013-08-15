@@ -104,8 +104,6 @@ tells the binary\_state\_solver that anything with a name matching the pattern .
 			creation, 1376528502802, 0, Ben: [""]
 			sensor, 1376530648379, 0, Ben: ["0100000000000000000000000000000b3e"]
 			displayName, 1376530648379, 0, Ben: ["0052006f006f006d0020003300300033"]
-			temperature.celcius, 1376537310386, 0, temperature_solver: ["403e000000000000"]
-		temperature in celcius is [30.0]
 			closed, 1376553799601, 0, binary_state_solver: ["00"]
 			temperature.celsius, 1376553901407, 0, temperature_solver: ["403d000000000000"]
 
