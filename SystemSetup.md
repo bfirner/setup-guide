@@ -1,4 +1,4 @@
-After you have the software set up on the server, follow these steps to get the sensor data working:
+After you have the software set up on the server (see the Infrastructure guide), follow these steps to get the sensor data working:
 
 Verify that the aggregator is running
 =====================================
