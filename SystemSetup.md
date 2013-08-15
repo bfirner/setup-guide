@@ -54,6 +54,7 @@ Solvers transform sensor data from the aggregator into data for the world model.
 		ruby make_new_entry.rb 210.45.250.3 7009 Ben Hefei.door.303 2878 "Door 303"
 
 2. Verify that the data was added into the world model with the client.rb script in ruby-examples.
+
 		bash-4.2$ ruby client.rb 210.45.250.3 7010
 		Searching for all URIs and attributes
 		Found uri "Hefei.door.303" with attributes:
