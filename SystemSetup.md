@@ -1,12 +1,12 @@
-After you have the software set up on the server (see the Infrastructure guide), follow these steps to get the sensor data working:
+After you have the software set up on the server (see the Infrastructure guide), follow these steps to get the sensor data working. I will put the ip address of the server as "<server ip>", but you should insert your own server's ip address (or localhost if you are setting up the system on your own computer).
 
 Verify that the aggregator is running
 =====================================
 1. Telnet to the server IP address at port 7008. Example output:
 
-		bash-4.2$ telnet 210.45.250.3 7008
-		Trying 210.45.250.3...
-		Connected to 210.45.250.3.
+		bash-4.2$ telnet <server ip> 7008
+		Trying <server ip>...
+		Connected to <server ip>.
 		Escape character is '^]'.
 		GRAIL solver protocol
 
@@ -21,7 +21,7 @@ The ip address of the server goes into /etc/owl/pip.confg on the SD cards of the
              You must have the libowl gem installed
 4. Example output:
 
-		ruby aggregator_example.rb 210.45.250.3 7008
+		ruby aggregator_example.rb <server ip> 7008
 		NaN: (phy [1]) 2981 -> 231, RSS:-72.0, Datalength:2 Data:
 		Processing some packets!
 		NaN: (phy [1]) 2988 -> 192, RSS:-90.0, Datalength:2 Data:
@@ -40,9 +40,9 @@ Verify that the world model is running
 ======================================
 1. Telnet to the server IP address at port 7009. Example output:
 
-		bash-4.2$ telnet 210.45.250.3 7009
-		Trying 210.45.250.3...
-		Connected to 210.45.250.3.
+		bash-4.2$ telnet <server ip> 7009
+		Trying <server ip>...
+		Connected to <server ip>.
 		Escape character is '^]'.
 		GRAIL world model protocol
 
@@ -51,11 +51,11 @@ Run Some Solvers
 Solvers transform sensor data from the aggregator into data for the world model.
 1. First add an object into the world model. An example of this is the make\_new\_entry.rb script from the previously mentioned ruby-examples repository, which creates entries for use with the gwt owl platform demo website.
 
-		ruby make_new_entry.rb 210.45.250.3 7009 Ben Hefei.door.303 2878 "Door 303"
+		ruby make_new_entry.rb <server ip> 7009 Ben Hefei.door.303 2878 "Door 303"
 
 2. Verify that the data was added into the world model with the client.rb script in ruby-examples.
 
-		bash-4.2$ ruby client.rb 210.45.250.3 7010
+		bash-4.2$ ruby client.rb <server ip> 7010
 		Searching for all URIs and attributes
 		Found uri "Hefei.door.303" with attributes:
 			creation, 1376528502802, 0, Ben: [""]
@@ -98,7 +98,7 @@ The config file is in the binary\_state\_solver/conf/binary\_types.conf. You sho
 tells the binary\_state\_solver that anything with a name matching the pattern .*\.door\..* (eg. Hefei.door.303) has a binary attribute that should be named "closed". You can add any number of lines to this file, and if you have flood sensors you should add the entry "flood wet".
 6. Verify that these solvers are sending data to the world model:
 
-		bash-4.2$ ruby client.rb 210.45.250.3 7010
+		bash-4.2$ ruby client.rb <server ip> 7010
 		Searching for all URIs and attributes
 		Found uri "Hefei.door.303" with attributes:
 			creation, 1376528502802, 0, Ben: [""]
