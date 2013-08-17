@@ -1,4 +1,4 @@
-After you have the software set up on the server (see the Infrastructure guide), follow these steps to get the sensor data working. I will put the ip address of the server as "<server ip>", but you should insert your own server's ip address (or localhost if you are setting up the system on your own computer).
+After you have the software set up on the server (see the Infrastructure guide), follow these steps to get the sensor data working. I will put the ip address of the server as "< server ip >", but you should insert the ip address of your own (or localhost if you are setting up the system on your own computer).
 
 Verify that the aggregator is running
 =====================================
@@ -12,6 +12,8 @@ Verify that the aggregator is running
 
 Set up receivers
 ===================
+Steps 1 and 2 assume that you are using the Raspberry Pi receivers -- if you want to run a receiver from a different computer then please run the pip\_sense\_layer code from https://github.com/bfirner/pip\_sense\_layer
+
 1. Program the server IP address on the Raspberry Pis so the receivers send data to the server.
 The ip address of the server goes into /etc/owl/pip.confg on the SD cards of the Pis
 2. Plug a Pi into power and ethernet and verify that the colored LEDs on the Pi come on
