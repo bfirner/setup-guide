@@ -51,9 +51,9 @@ Configures the port of the world model that the webapp will connect to for modif
 
 sms.username
 ------------
-TODO
+Username for a gmail account, used for sending SMS messages.
 
 sms.password
 ------------
-TODO
+Password for the gmail account, used for sending SMS messages.
 
